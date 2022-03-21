@@ -1,4 +1,4 @@
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -g -std=c++17
 INCLUDES = -I ./include/
 SRC_DIR = ./src/
 SRCS = $(SRC_DIR)main.cpp $(SRC_DIR)GpioPins.cpp

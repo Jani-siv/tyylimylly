@@ -16,6 +16,14 @@ int main()
     char* device;
     device = dev;
     localPin.initPins(pins, device);
+    while(1)
+    {
+    localPin.writeBit(1, HIGH);
+    sleep(1);
+    localPin.writeBit(1, LOW);
+    sleep(1);
+    }
+
     std::cout<<"hello world"<<std::endl;
     return 0;
 }
