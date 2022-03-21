@@ -1,7 +1,7 @@
 CXXFLAGS = -Wall -g
 INCLUDES = -I ./include/
 SRC_DIR = ./src/
-SRCS = $(SRC_DIR)main.cpp
+SRCS = $(SRC_DIR)main.cpp $(SRC_DIR)GpioPins.cpp
 OBJS = $(SRCS:.cpp=.o)
 MAIN = tyylimylly
 OUT_DIR = ./out
