@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <sys/ioctl.h>
+#include <unistd.h>
 #define OUT true
 #define IN false
 
@@ -12,7 +13,8 @@ class GpioPins{
     public:
         GpioPins();
         ~GpioPins();
-        void initPins(std::map<int,bool>&pinNumbers,char *device); 
+        void initPins(std::map<int,bool>&pinNumbers,char *device);
+        void writeBit(int pin, bool state);
     private:
         int useOut = 0;
         int useIn = 0;

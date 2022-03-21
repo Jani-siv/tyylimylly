@@ -7,7 +7,7 @@ else
 	exit -1
 fi
 echo 'sending file'
-sshpass -f pass.txt scp ./out/tyylimylly jani@127.0.0.1:tyylimylly
+sshpass -f pass.txt scp ./out/tyylimylly pi@192.168.0.100:tyylimylly
 
 if [ $? == 0 ]; then
 	echo 'File send successfully'
