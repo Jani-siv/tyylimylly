@@ -17,7 +17,7 @@ int main()
     char* device;
     device = dev;
     PulseGenerator gen {device,27};
-
+    gen.generateRps(10, 20, 5);
 /*
     localPin.initPins(pins, device);
     while(1)

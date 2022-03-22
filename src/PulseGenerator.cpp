@@ -8,6 +8,7 @@ PulseGenerator::PulseGenerator(char* device, int outputPin)
     this->activeOutputPin = outputPin;
     std::map<int,bool>outputPinMap;
     outputPinMap[outputPin] = OUT;
+    outputPinMap[17] = IN;
     this->pin->initPins(outputPinMap, this->dev);
 }
 PulseGenerator::~PulseGenerator()
