@@ -16,8 +16,8 @@ int main()
     GpioPins localPin;
     char* device;
     device = dev;
-    PulseGenerator pulse(dev,27);
-    pulse.generateRps(10, 20, 3);
+    PulseGenerator gen {device,27};
+
 /*
     localPin.initPins(pins, device);
     while(1)

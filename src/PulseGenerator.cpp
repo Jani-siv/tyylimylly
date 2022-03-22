@@ -32,7 +32,7 @@ void PulseGenerator::generateRps(int pulseOnMills, int timesInsec, int seconds)
         this->pin->writeBit(this->activeOutputPin, true);
         usleep((pulseOnMills*1000));
         this->pin->writeBit(this->activeOutputPin, false);
-        usleep((offtime*1000));
+        usleep((pulseOff*1000));
      }
     }
 }

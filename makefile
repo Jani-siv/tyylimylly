@@ -1,7 +1,7 @@
 CXXFLAGS = -Wall -g -std=c++17
 INCLUDES = -I ./include/
 SRC_DIR = ./src/
-SRCS = $(SRC_DIR)main.cpp $(SRC_DIR)GpioPins.cpp
+SRCS = $(SRC_DIR)main.cpp $(SRC_DIR)GpioPins.cpp $(SRC_DIR)PulseGenerator.cpp
 OBJS = $(SRCS:.cpp=.o)
 MAIN = tyylimylly
 OUT_DIR = ./out
