@@ -7,8 +7,9 @@ PulseGenerator::PulseGenerator(char* device, int outputPin)
     this->pin = &pinned;
     this->activeOutputPin = outputPin;
     std::map<int,bool>outputPinMap;
-    outputPinMap[outputPin] = OUT;
+    //outputPinMap[outputPin] = OUT;
     outputPinMap[17] = IN;
+    outputPinMap[27] = OUT;
     this->pin->initPins(outputPinMap, this->dev);
 }
 PulseGenerator::~PulseGenerator()
@@ -30,9 +31,9 @@ void PulseGenerator::generateRps(int pulseOnMills, int timesInsec, int seconds)
     {
      for ( int k = 0; k < timesInsec; k++)
      {
-        this->pin->writeBit(this->activeOutputPin, true);
+        this->pin->writeBit(1, true);
         usleep((pulseOnMills*1000));
-        this->pin->writeBit(this->activeOutputPin, false);
+        this->pin->writeBit(1, false);
         usleep((pulseOff*1000));
      }
     }
