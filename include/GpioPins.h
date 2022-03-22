@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <errno.h>
 #define OUT true
 #define IN false
 

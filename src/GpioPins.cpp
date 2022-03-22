@@ -1,4 +1,5 @@
 #include "../include/GpioPins.h"
+#include <cstring>
 #include <linux/gpio.h>
 #include <sys/ioctl.h>
 
@@ -14,6 +15,8 @@ GpioPins::~GpioPins()
 void GpioPins::initPins(std::map<int,bool>&pinNumbers, char *device)
 {
     int fd, ret;
+    char dev[] = "/dev/gpiochip0";
+    device = dev;
     fd = open(device, O_RDONLY);
         if (fd < 0)
         {
@@ -55,7 +58,7 @@ void GpioPins::writeBit(int pin, bool state)
     ret = ioctl(this->output.fd, GPIOHANDLE_SET_LINE_VALUES_IOCTL, &this->outputdata);
     if (ret < 0)
     {
-        std::cerr<<"Error change pin state"<<std::endl;
+        std::cerr<<"Error change pin state: "<<strerror(errno)<<std::endl;
         exit(-1);
     }
 

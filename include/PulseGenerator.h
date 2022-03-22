@@ -12,5 +12,5 @@ class PulseGenerator{
     private:
         char *dev = nullptr;
         int activeOutputPin = 0; 
-        GpioPins* pin;
+        GpioPins pin;
 };
