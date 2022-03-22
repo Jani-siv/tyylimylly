@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../include/GpioPins.h"
+#include "../include/PulseGenerator.h"
 #include <map>
 #define IN false
 #define OUT true
@@ -15,6 +16,9 @@ int main()
     GpioPins localPin;
     char* device;
     device = dev;
+    PulseGenerator pulse(dev,27);
+    pulse.generateRps(10, 20, 3);
+/*
     localPin.initPins(pins, device);
     while(1)
     {
@@ -23,7 +27,7 @@ int main()
     localPin.writeBit(1, LOW);
     sleep(1);
     }
-
+*/
     std::cout<<"hello world"<<std::endl;
     return 0;
 }
